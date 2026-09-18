@@ -203,3 +203,56 @@ The `store_id` field connects each event to one record in the stores table.
 - Scheduled
 - Completed
 - Cancelled
+
+## Table 5: Attendance
+
+### Table purpose
+
+The attendance table records which fictional players registered for and
+attended each Riftbound organized-play event.
+
+### Table grain
+
+One row represents one player's participation record for one event.
+
+### Composite primary key
+
+The combination of `player_id` and `event_id` uniquely identifies each
+attendance record.
+
+A player should have no more than one attendance record for the same event.
+
+### Foreign keys
+
+- `player_id` connects to the players table.
+- `event_id` connects to the events table.
+
+### Fields
+
+| Field | Data type | Description | Example |
+|---|---|---|---|
+| player_id | Text | Player associated with the event | P00001 |
+| event_id | Text | Event associated with the player | E0001 |
+| registration_date | Date | Date the player registered | 2026-02-05 |
+| registered | Boolean | Whether the player registered | True |
+| attended | Boolean | Whether the player attended | True |
+| attendance_number | Integer | Sequence of this player's attended events | 1 |
+| check_in_time | Time | Time the player checked in | 17:45 |
+| final_placement | Integer | Player's final placement when applicable | 8 |
+
+### Attendance-number examples
+
+| Player | Event date | Attendance number |
+|---|---|---:|
+| P00001 | 2026-02-14 | 1 |
+| P00001 | 2026-02-28 | 2 |
+| P00001 | 2026-03-21 | 3 |
+
+The first event attended receives an attendance number of 1. The next event
+receives 2, followed by 3, and so on.
+
+### Missing-value rules
+
+- `check_in_time` should be blank when the player did not attend.
+- `final_placement` may be blank for Learn to Play and other noncompetitive events.
+- `attendance_number` should be blank when `attended` is False.
