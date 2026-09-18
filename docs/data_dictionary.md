@@ -98,3 +98,60 @@ table.
 - Online retailer
 - Mass retailer
 - Convention
+
+## Table 3: Stores
+
+### Table purpose
+
+The stores table contains fictional retail locations that sell Riftbound
+products and host organized-play events.
+
+### Table grain
+
+One row represents one participating store.
+
+### Primary key
+
+`store_id`
+
+### Fields
+
+| Field | Data type | Description | Example |
+|---|---|---|---|
+| store_id | Text | Unique store identifier | S001 |
+| store_name | Text | Fictional store name | Nexus Card Shop |
+| city | Text | City where the store is located | Orlando |
+| state | Text | Two-letter state abbreviation | FL |
+| region | Text | Geographic reporting region | Southeast |
+| store_type | Text | Type of participating retailer | Local game store |
+| carries_riftbound | Boolean | Whether the store currently sells Riftbound | True |
+| hosts_events | Boolean | Whether the store hosts organized play | True |
+| community_support_score | Integer | Simulated rating of the store's player support | 5 |
+
+### Region values
+
+- Northeast
+- Southeast
+- Midwest
+- West
+
+### Store-type values
+
+- Local game store
+- Mass retailer
+- Specialty retailer
+
+### Community-support score
+
+The `community_support_score` is a simulated value from 1 through 5.
+
+| Score | Meaning |
+|---:|---|
+| 1 | Very limited community support |
+| 2 | Limited support |
+| 3 | Standard support |
+| 4 | Strong support |
+| 5 | Exceptional support |
+
+The score could represent factors such as staff knowledge, beginner support,
+event communication, and consistency of organized play.
