@@ -52,3 +52,49 @@ same player ID.
 - Collecting
 - Social play
 - League of Legends fan
+
+## Table 2: Purchases
+
+### Table purpose
+
+The purchases table records every fictional product purchase made by a player.
+
+### Table grain
+
+One row represents one purchase transaction.
+
+### Primary key
+
+`purchase_id`
+
+### Foreign key
+
+`player_id`
+
+The `player_id` field connects each purchase to one record in the players
+table.
+
+### Fields
+
+| Field | Data type | Description | Example |
+|---|---|---|---|
+| purchase_id | Text | Unique purchase identifier | O000001 |
+| player_id | Text | Player who made the purchase | P00001 |
+| purchase_date | Date | Date of the transaction | 2026-01-22 |
+| product_type | Text | Type of Riftbound product purchased | Champion Deck |
+| amount_usd | Decimal | Modeled transaction amount in US dollars | 19.99 |
+| purchase_channel | Text | Where the purchase occurred | Local game store |
+
+### Product-type values
+
+- Champion Deck
+- Proving Grounds
+- Booster Pack
+- Booster Bundle
+
+### Purchase-channel values
+
+- Local game store
+- Online retailer
+- Mass retailer
+- Convention
