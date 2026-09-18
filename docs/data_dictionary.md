@@ -155,3 +155,51 @@ The `community_support_score` is a simulated value from 1 through 5.
 
 The score could represent factors such as staff knowledge, beginner support,
 event communication, and consistency of organized play.
+
+
+## Table 4: Events
+
+### Table purpose
+
+The events table contains fictional Riftbound organized-play events hosted by
+participating stores.
+
+### Table grain
+
+One row represents one organized-play event.
+
+### Primary key
+
+`event_id`
+
+### Foreign key
+
+`store_id`
+
+The `store_id` field connects each event to one record in the stores table.
+
+### Fields
+
+| Field | Data type | Description | Example |
+|---|---|---|---|
+| event_id | Text | Unique event identifier | E0001 |
+| store_id | Text | Store hosting the event | S001 |
+| event_date | Date | Date the event occurred | 2026-02-14 |
+| event_type | Text | Type of organized-play event | Learn to Play |
+| capacity | Integer | Maximum number of participants | 24 |
+| registrations | Integer | Number of registered players | 20 |
+| event_status | Text | Whether the event occurred as planned | Completed |
+| entry_fee_usd | Decimal | Modeled event entry fee | 10.00 |
+
+### Event-type values
+
+- Learn to Play
+- Weekly Play
+- Prerelease
+- Store Championship
+
+### Event-status values
+
+- Scheduled
+- Completed
+- Cancelled
